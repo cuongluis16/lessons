@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>js test</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>js test</h1>
+    <hr>
+        
+    <form>
+      <input id="data" type="text" name="id">
+      <input type="button" value="click me" onclick="hello();">
+    </form>
+
+    <hr>
+
+    <button>COLOR!</button>
+
+    <script>
+      function hello() {
+
+        const msg = document.getElementById('data').value;
+
+        alert( msg );
+      }
+
+      const btn = document.querySelector('button');
+
+      btn.onclick = function() {
+        document.body.style.backgroundColor = '#00ff00';
+      }
+    </script>
+  </body>
+</html>
