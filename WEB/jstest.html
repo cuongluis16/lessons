@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jstest: aloha</title>
+	<meta charset="utf-8">
+</head>
+<body>
+  <h1>jstest: aloha</h1>
+  <hr>
+  
+  <button>click me</button>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    
+    $(function(){
+      $('button').on('click', function(){
+        $('h1').css('color', 'red');
+      });
+    })
+  </script>
+</body>
+</html>

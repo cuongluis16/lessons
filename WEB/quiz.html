@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>text2</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>米国の首都はどちらですか。</h1>
+  
+    <hr>
+  
+    <button id="NY">New York</button>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('#NY').on('click', function(){
+          $('h1').text('間違いです。');
+        });
+      })
+    </script>
+    <br>
+    <button id="WDC">Washington DC</button>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('#WDC').on('click', function(){
+          $('h1').text('正解です。');
+        });
+      })
+    </script>
+    <br>
+     <button id="CC">Chicago</button>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('#CC').on('click', function(){
+          $('h1').text('間違いです。');
+        });
+      })
+    </script>
+    <br>
+  </body>
+  </html>

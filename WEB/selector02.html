@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery: selector</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>jquery: selector</h1>
+	<hr>
+
+	<h2>最後の１個だけ、色を変える</h2>
+	<ul>
+		<li>バナナ</li>
+		<li>ぶどう</li>
+		<li>りんご</li>
+		<li>いちご</li>
+	</ul>
+	<hr>
+	<h2>偶数番だけ( even )、色を変える</h2>
+	<ul>
+		<li>バナナ</li>
+		<li>ぶどう</li>
+		<li>りんご</li>
+		<li>いちご</li>
+		<li>くり</li>
+		<li>なし</li>
+	</ul>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	  $(function(){
+	    $('li:even').css('color', 'tomato');
+	  })
+	</script>
+
+</body>
+</html>

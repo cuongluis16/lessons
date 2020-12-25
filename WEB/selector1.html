@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery: selector</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>jquery: selector</h1>
+	<hr>
+	<p>
+	  今週で、2020年の授業は冬休みになります。最近関東地方は、地震が多いですね。もしすごく大きな地震があっても、無事に2021年を迎えてください。
+	</p>
+	<ul>
+	  <li class="goods">食べるもの</li>
+	  <li class="goods">水（ペットボトル）</li>
+	  <li class="goods">薬</li>
+	  <li id="tanaka">↑　これらを、1個のバッグに入れておく</li>
+	</ul>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+		  $('h1').css('color', 'red');
+		  $('p').css('color', 'blue');
+		  $('.goods').css('color', 'green');
+		  $('#tanaka').css('color', 'tomato');
+		})
+	</script>
+</body>
+</html>
