@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>クイズ</title>
+    <meta charset="utf-8">
+    <style>
+      p{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>クイズ with jQuery</h1>
+    問題文をクリックすると、正解が表示されます。
+
+    <hr>
+
+    <p>
+     >＞　 きょうの日付け　＜<
+    </p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $("p").on("click", function(){
+          $("p").text("令和3年1月25日、月曜日");
+        });
+      })
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Naruto</title>
+	<meta charset="utf-8">
+	
+	<style>
+		p{
+			color: red;
+		}
+		h1{
+			color: blue;
+			font-family: cursive;
+		}
+		h2{
+			font-family: sans-serif;
+			
+		}
+	</style>
+</head>
+<body>
+	<h1>Naruto</h1>
+	2021年1月18日月曜日
+
+	<hr>
+	<h2>登場人物</h2>
+		<ol>
+  			<li id="naruto">ナルト</li>
+  			<li id="sasuke">サスケ</li>
+  			<li id="kakasi">カカシ</li>
+  			<li id="sakura">サクラ</li>
+		</ol>
+
+		<ul>
+  			<li id="naruto2">ナルト</li>
+ 			<li id="sasuke2">サスケ</li>
+  			<li id="kakasi2">カカシ</li>
+ 			<li id="sakura2">サクラ</li>
+		</ul>
+
+			<p> Narutoは週刊少年ジャンプに連載されていた忍者の物語。しかしナルトがいつ中忍試験に合格したか、わからない。。</p>
+
+			<p>また、いつの間にか子どもがいて、やっぱり忍者になっていく？<br> その物語は読まなかったので、私は知りません。。</p>
+
+		<form>
+			ID: <input type="text" name="id"><br>
+			パスワード: <input type="password" name="password"><br>
+			日付: <input type="date" name="date"><br>
+			<input type="submit" value="OK">
+		</form>
+
+		<hr>
+
+		<h2>質問</h2>
+		<p id="mondai">ナルトはどこに住んでいますか？ </p>
+
+		<hr>
+		<img src="gazo/b.jpg" width=300>
+		<img src="gazo/a.jpg" width=300>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+  		$(function(){
+  			$("h1").on("click", function(){
+     			 $("h1").css("color", "yellow");
+   			 })
+    		$("h2").on("click", function(){
+      			$("h2").css("color", "red");
+   		 	});
+   		 	$("#naruto").on("click", function(){
+  				$("#naruto").css("color", "orange");
+			});
+			$("#sasuke").on("click", function(){
+  				$("#sasuke").css("color", "skyblue");
+			});
+			$("#kakasi").on("click", function(){
+  				$("#kakasi").css("color", "blue");
+			});
+			$("#sakura").on("click", function(){
+  				$("#sakura").css("color", "pink");
+			});
+			$("#naruto2").on("click", function(){
+ 				$("#naruto2").text("鳴門");
+			});
+			$("#sasuke2").on("click", function(){
+  				$("#sasuke2").text("佐助");
+			});
+			$("#kakasi2").on("click", function(){
+  				$("#kakasi2").text("案山子");
+			});
+			$("#sakura2").on("click", function(){
+ 				$("#sakura2").text("桜");
+			});
+			$("#mondai").on("click", function(){
+  				$("#mondai").text("東京？");
+			});
+ 		})
+		</script>
+</body>
+</html>

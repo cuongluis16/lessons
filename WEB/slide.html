@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>slide show</title>
+    <meta charset="utf-8">
+    <style>
+      img{
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>slide show: スライドショー</h1>
+    画像をクリックしたら、次の画像を表示する。
+
+    <hr>
+
+    <img src="gazo/a.jpg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        const gazofiles = [
+          `gazo/a.jpg`,
+          `gazo/b.jpg`,
+          `gazo/c.jpg`,
+          `gazo/d.jpg`
+        ]
+
+        let num = 0
+        
+        $("img").on("click", function(){
+          num++
+           if ( num >= gazofiles.length ) {
+            num = 0
+          }
+          $("img").attr("src", gazofiles[ num ]);
+        })
+      })
+    </script>
+  </body>
+</html>
