@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>add/remove class</title>
+    <meta charset="utf-8">
+    <style>
+      .blue{
+        color: blue;
+      }
+      .large{
+        font-size: 50pt;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>add/remove class</h1>
+    <hr>
+    <button id="blue">BLUE</button>
+    <button id="large">LARGE</button>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        let blue = 0
+        let large = 0
+        
+        $("#blue").on("click", function(){
+          if ( blue == 0 ) {
+            $("h1").addClass( "blue" )
+          } else {
+            $("h1").removeClass( "blue" )
+          }
+        })
+        $("#large").on("click", function(){
+          if ( large == 0 ) {
+            $("h1").addClass( "large" )
+          } else {
+            $("h1").removeClass( "large" )
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -2,21 +2,29 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.animation.AnimationTimer;
-import javafx.scene.paint.Color;
+import javafx.scene.input.KeyEvent;
+   import javafx.event.EventHandler;
 
-  public class BreakoutMain extends Application {
+public class BreakoutMain extends Application {
     private BreakoutThread breakoutthread;
-
-    public static void main ( String[] args ) {
+    public static void main(String[] args) {
       launch( args );
     }
-
-     @Override
+    scene.setOnKeyPressed(
+     new EventHandler<KeyEvent>(){
+       public void handle( KeyEvent e ) {
+         System.out.println( e.getCode() );
+       }
+     }
+   );
+    @Override
     public void start( Stage stage ) {
-      stage.setTitle( "BREAKOUT" );
+      stage.setTitle( "BreakoutGame" );
+
       Pane pane = new Pane();
       Scene scene = new Scene( pane );
       stage.setScene( scene );
@@ -25,7 +33,7 @@ import javafx.scene.paint.Color;
       GraphicsContext gc = canvas.getGraphicsContext2D();
       pane.getChildren().add( canvas );
 
-      breakoutthread = new BreakoutThread(gc);
+      breakoutthread = new BreakoutThread( gc );
       breakoutthread.start();
 
       stage.show();
@@ -35,54 +43,75 @@ import javafx.scene.paint.Color;
   class BreakoutThread extends AnimationTimer {
     private GraphicsContext gc;
     private Ball ball;
+    private Bar bar;
 
-    BreakoutThread( GraphicsContext gc ){
+    public BreakoutThread( GraphicsContext gc ) {
       this.gc = gc;
-
-      ball = new Ball();
+      this.ball = new Ball();
+      this.bar = new Bar();
     }
 
     @Override
-    public void handle( long time ){
-
+    public void handle( long time ) {
       gc.clearRect( 0, 0, 640, 480 );
 
-      ball.draw( gc );
-
+      ball.draw();
       ball.move();
+
+      bar.draw();
     }
-}
+  }
+
+
 
   class Ball {
-    private int radius;
+　   private int x;
+　   private int y;
+　   private int x_speed;
+　   private int y_speed;
+
+　   public Ball() {
+　     x = 0;
+　     y = 0;
+　     x_speed = 3;
+　     y_speed = 3;
+　   }
+     public void move() {
+        x += x_speed;
+        y += y_speed;
+
+      if( y > 480 ) {
+      y_speed *= -1;
+      }
+    }
+    class Bar {
     private int x;
     private int y;
+    private int w;
+    private int h;
     private int x_speed;
     private int y_speed;
 
-    public Ball() {
-      this.radius = 10;
-      this.x = 0;
-      this.y = 0;
-      this.x_speed = 1;
-      this.y_speed = 1;
+    public Bar(){
+      x = 50;
+      y = 450;
+      w = 100;
+      h = 20;
     }
-
-    public void draw( GraphicsContext gc ) {
-      gc.setFill( Color.BLACK );
-      gc.fillOval( 0, 0, this.radius*2, this.radius*2 );
+    public void draw( GraphicsContext gc ){
+      gc.setFill( Color.BLUE );
+      gc.fillRect( x, y, w, h );
     }
-
+  }
     public void move() {
-      this.x += this.x_speed;
-      this.y += this.y_speed;
-    }
+      x += 5;
+      y += 5;
 
-    public void change_x_speed(){
-      x_speed = x_speed;
-     
+      if ( x > 640 ) {
+        x = 0;
+      }
+      if ( y > 480 ) {
+        y = 0;
+      }
     }
-    public void change_y_speed(){
-      y_speed = y_speed +1;
-    }
-    }
+  }

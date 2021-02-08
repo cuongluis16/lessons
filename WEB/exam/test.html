@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EXAM</title>
+	<meta charset="utf-8">
+	<style>
+		#d{
+			color: red;
+		}
+		.f{
+        font-size: 50pt;
+     	 }
+      	table, td,th {
+  			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<ol id="f">
+		<li id="a">ぶり</li>
+		<li id="b">はまち</li>
+		<li id="c">たい</li>
+		<li id="d">まぐろ</li>
+		<li id="e">こはだ</li>
+	</ol>
+
+  	<hr>
+
+
+  	<table id="table">
+  		<tr>
+  			<th>ぶり</th>
+  			<td>鰤</td>
+  		</tr>
+  		<tr>
+  			<th>はまち</th>
+  			<td>魬</td>
+  		</tr>
+  		<tr>
+  			<th>たい</th>
+  			<td>鯛</td>
+  		</tr>
+  		<tr>
+  			<th>まぐろ</th>
+  			<td>鮪</td>
+  		</tr>
+  		<tr>
+  			<th>こはだ</th>
+  			<td>小鰭</td>
+  		</tr>
+  	</table>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+  		$(function(){
+  		  $('li').on('click', function(){
+  		    $(this).css('font-size', '50pt');
+  		  });
+  		  $("tr").on("click", function(){
+  				$(this).css("color", "blue");
+			});
+  		})
+  	</script>
+</body>
+</html>

@@ -1,32 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>クイズ</title>
-    <meta charset="utf-8">
-    <style>
-      p{
-        color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>クイズ with jQuery</h1>
-    問題文をクリックすると、正解が表示されます。
-
-    <hr>
-
-    <p>
-     >＞　 きょうの日付け　＜<
-    </p>
-
+<head>
+  <title>Test</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+    <h1>test</h1>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-      $(function(){
-        $("p").on("click", function(){
-          $("p").text("令和3年1月25日、月曜日");
-        });
-      })
-    </script>
-
-  </body>
+　    $(function(){
+      let test = 1;
+       $("h1").on("click", function(){
+        if(test==1){
+         $(this).text("ALOHA!").addClass('red')
+         test=0;
+        }else{
+           $(this).text("test").removeClass('red')
+           test=1;
+         }
+       });
+     })
+　  </script>
+</body>
 </html>

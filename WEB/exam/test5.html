@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEST5</title>
+</head>
+<body>
+	<img src="img/a.jpg" width=200>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        const gazofiles = [
+          `img/a.jpg`,
+          `img/b.jpg`,
+        ]
+        let num = 0
+
+        $("img").on("click", function(){
+          num++
+           if ( num >= gazofiles.length ) {
+            num = 0
+          }
+          $("img").attr("src", gazofiles[ num ]);
+        })
+      })
+    </script>
+</body>
+</html>

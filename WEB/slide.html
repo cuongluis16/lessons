@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <style>
       img{
-        width: 300px;
+        width: 500px;
       }
     </style>
   </head>
@@ -16,6 +16,7 @@
     <hr>
 
     <img src="gazo/a.jpg">
+    <h2>one</h2>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -26,15 +27,21 @@
           `gazo/c.jpg`,
           `gazo/d.jpg`
         ]
-
+        const titles = [
+        `one`,
+        `two`,
+        `three`,
+        `four`
+        ]
         let num = 0
-        
+
         $("img").on("click", function(){
           num++
            if ( num >= gazofiles.length ) {
             num = 0
           }
           $("img").attr("src", gazofiles[ num ]);
+          $("h2").text(titles[num])
         })
       })
     </script>
