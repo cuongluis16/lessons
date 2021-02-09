@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>TEST5</title>
+	<title>TEST6</title>
 </head>
 <body>
-	<img src="img/a.jpg" width=200>
+	<img id="aa" src="img/a.jpg" width=400>
+	<img id="bb" src="img/b.jpg" width=400>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(function(){
-        const gazofiles = [
-          `img/a.jpg`,
+        const gazo = [
           `img/b.jpg`,
+          `img/a.jpg`
+        ]
+        const imgs = [
+         `img/a.jpg`,
+          `img/b.jpg`
         ]
         let num = 0
 
         $("img").on("click", function(){
           num++
-           if ( num >= gazofiles.length ) {
+           if ( num >= gazo.length ) {
             num = 0
           }
-          $("img").attr("src", gazofiles[ num ]);
+          $("#aa").attr("src", gazo[ num ]);
+          $("#bb").attr("src", imgs[ num ]);
         })
       })
     </script>
