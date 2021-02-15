@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test10</title>
+    <meta charset="utf-8">
+    <style>
+      img{
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>test10</h1>
+
+    <hr>
+
+    <img src="img/a.jpg">
+    <h2>Moutain</h2>
+    <br>
+    <button id="dm">前の画像</button>
+    <button id="cc">次の画像</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        const gazofiles = [
+          `img/a.jpg`,
+          `img/b.jpg`,
+          `img/f.jpg`,
+          `img/g.jpg`,
+        ]
+         const titles = [
+        `Moutain`,
+        `Emoji`,
+        `BloodMoon`,
+        `DreamCity`
+        ]
+        let num = 0
+
+        $("img").on("click", function(){
+          num++
+           if ( num >= gazofiles.length ) {
+            num = 0
+          }
+          $("img").attr("src", gazofiles[ num ]);
+          $("h2").text(titles[num]);
+           })
+       $("#cc").on("click", function(){
+          num++
+           if ( num >= gazofiles.length ) {
+            num = 0
+          }
+          $("img").attr("src", gazofiles[ num ]);
+          $("h2").text(titles[num]);
+        })
+       $("#dm").on("click", function(){
+          num--
+           if ( num >= gazofiles.length ) {
+            num = 0
+          }
+          $("img").attr("src", gazofiles[ num ]);
+          $("h2").text(titles[num]);
+        })
+      })
+    </script>
+  </body>
+</html>

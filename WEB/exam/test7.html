@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>slide show</title>
+    <title>test7</title>
     <meta charset="utf-8">
     <style>
       img{
-        width: 500px;
+        width: 300px;
       }
     </style>
   </head>
   <body>
-    <h1>slide show: スライドショー</h1>
-    画像をクリックしたら、次の画像を表示する。
+    <h1>test7。</h1>
 
     <hr>
 
-    <img src="gazo/a.jpg">
-    <h2>one</h2>
+    <img src="img/a.jpg">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(function(){
         const gazofiles = [
-          `gazo/a.jpg`,
-          `gazo/b.jpg`,
-          `gazo/c.jpg`,
-          `gazo/d.jpg`
-        ]
-        const titles = [
-        `one`,
-        `two`,
-        `three`,
-        `four`
+          `img/a.jpg`,
+          `img/b.jpg`,
+          `img/c.jpg`,
+          `img/d.jpg`,
         ]
         let num = 0
 
@@ -41,7 +33,6 @@
             num = 0
           }
           $("img").attr("src", gazofiles[ num ]);
-          $("h2").text(titles[num])
         })
       })
     </script>
