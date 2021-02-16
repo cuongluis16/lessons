@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test13</title>
+    <meta charset="utf-8">
+  </head>
+<body>
+  <h1>tets13</h1>
+  画像をクリックした回数を表示する
+ <hr>
+  <img src="img/a.jpg" width=300>
+  <h2>0</h2>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(function(){
+  const turn=["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20",];
+    let num=0;
+    $("img").on("click",function(){
+      num++
+      if(num>=turn.length){
+        $("img").hide("img");
+
+      }
+        $("h2").text(turn[num]);
+
+    });
+  })
+</script>
+</html>
