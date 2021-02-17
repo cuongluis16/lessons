@@ -1,51 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>test11</title>
-    <meta charset="utf-8">
-    <style>
-      .red{
-        color:red;
-      }
-      .blue{
-        color:blue;
-      }
-      .green{
-        color:green;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>test11</h1>
-    ボタンを順番にクリックする
+<head>
+  <title>Test11</title>
+  <meta charset="utf-8">
+  <style >
+    .red{
+      color: red;
+    }
+    .blue{
+      color: blue;
+    }
+    .green{
+      color: green;
+    }
+  </style>
 
-    <hr>
+</head>
+<body>
+  <h1>test11</h1>
 
-    <button id="aa">BTN1</button>
-    <button id="bb">BTN2</button>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <hr>
+
+  <button id="a">BTN1</button>
+  <button id="b">BTN2</button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-
     $(function(){
-      let num = 0
-      let lz = 1
-      $("#aa").on("click", function(){
-        num++
-          if ( num >= 0 ) {
-            $('h1').addClass("red")
-          }else{
-            $("h1").removeClass( "red" )
-          }
+      let a = 0
+      $("#a").on("click",function(){
+        a++
+        $("h1").addClass("red")
+        a = 1
       })
-      $('#bb').on('click', function(){
-        if (num ==0) {
-            $('h1').addClass("green")
-        }else{
+      $("#b").on("click",function(){
+        $("h1").addClass("blue")
+        if(a >= 1){
 
-          $("h1").css('color', 'blue');
+        }else{
+          $("h1").addClass("green")
         }
-        })
-    });
+      })
+    })
+
   </script>
-  </body>
+
+</body>
 </html>
